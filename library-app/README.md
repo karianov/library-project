@@ -1,27 +1,18 @@
-# LibraryApp
+# Capa de presentación: Aplicación Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+## Consideraciones tecnológicas
 
-## Development server
+- Proyecto Angular con la versión 11.1.4.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Entorno de desarrollo y depuración
 
-## Code scaffolding
+Este proyecto se desarrolla con el editor de texto [Visual Studio Code](https://code.visualstudio.com/).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Ejecución local
 
-## Build
+Si recién se ha clonado este repositorio, basta con ejecutar el comando `npm install` para preparar el entorno de ejecución local. Con el comando `ng serve -o` se ejecuta la aplicación localmente y se abre una ventana del navegador predeterminado con la ejecución.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Recomendación
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- En cuanto a la base de datos, se sugiere utilizar el servidor de base de datos de Oracle en su versión 19c, y correr el [script para el levantamiento de la base de datos](https://github.com/karianov/library-project/blob/main/db/Script.sql).
+- En cuanto a la API, se sugiere hacer ejecución en el puerto `8080` del `localhost` para efectos de depuración local, y seguir (o modificar) las configuraciones de conexión a la base de datos que se encuentran en el [archivo de propiedades de la aplicación](https://github.com/karianov/car-center/blob/main/car-center-api/src/main/resources/application.properties).
