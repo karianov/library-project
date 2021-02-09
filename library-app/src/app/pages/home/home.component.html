@@ -1,1 +1,61 @@
-<p>home works!</p>
+<div class="row p-3">
+  <div class="col-12 col-md-2 align-middle">Criterio de búsqueda:</div>
+  <div class="col-12 col-md-8 align-middle">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Indicio de búsqeuda (p. ej. Autor, título, año)"
+      [formControl]="searchField"
+    />
+  </div>
+  <div class="col-12 col-md-2 align-middle">
+    <button
+      type="submit"
+      class="btn btn-primary mb-3"
+      (click)="searchBook()"
+      [disabled]="loadingQuery"
+    >
+      <span *ngIf="!loadingQuery">Consultar</span>
+      <span *ngIf="loadingQuery">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Cargando
+      </span>
+    </button>
+  </div>
+</div>
+<div class="row m-3 alert alert-danger" role="alert" *ngIf="invalidInput">
+  Ingrese un criterio de búsqueda
+</div>
+<div
+  class="row m-3 alert alert-danger"
+  role="alert"
+  *ngIf="errorOnQuery && errorOnQuery.length > 0"
+>
+  {{ errorOnQuery }}
+</div>
+<div class="row m-3" *ngIf="booksSearched && booksSearched.length > 0">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">N°</th>
+        <th scope="col">Título</th>
+        <th scope="col">Año</th>
+        <th scope="col">Género</th>
+        <th scope="col">Páginas</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Editorial</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of booksSearched">
+        <th scope="row">{{ book.idBook }}</th>
+        <td>{{ book.title }}</td>
+        <td>{{ book.year }}</td>
+        <td>{{ book.genre }}</td>
+        <td>{{ book.pages }}</td>
+        <td>{{ book.author.fullname }}</td>
+        <td>{{ book.editorial.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+      http://dozer.sourceforge.net/schema/beanmapping.xsd">
+	<!-- Mapping entries -->
+	<mapping date-format="MM/dd/yyyy" map-null="true" map-empty-string="true" wildcard="true" type="one-way" >
+        <class-a>com.credibanco.assessment.library.dto.AuthorDto</class-a>
+        <class-b>com.credibanco.assessment.library.model.Author</class-b>
+        <field>
+            <a>birthdate</a>
+            <b>birthdate</b>
+        </field>
+    </mapping>
+</mappings>
