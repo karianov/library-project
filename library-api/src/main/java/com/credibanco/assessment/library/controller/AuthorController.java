@@ -48,14 +48,14 @@ public class AuthorController {
 		return new ResponseEntity<AuthorDto>(authorService.saveAuthor(newAuthor), HttpStatus.CREATED);
 	}
 
-	@PutMapping("/{cityId}")
-	@ApiOperation(value = "Update a city", notes = "REST service to update a searched city")
+	@PutMapping("/{idAuthor}")
+	@ApiOperation(value = "Update an author", notes = "REST service to update a searched author")
 	public ResponseEntity<AuthorDto> updateAuthor(@PathVariable Integer idAuthor, @Valid @RequestBody AuthorDto authorToUpdate) {
 		return new ResponseEntity<AuthorDto>(authorService.updateAuthor(idAuthor, authorToUpdate), HttpStatus.OK);
 	}
 
-	@DeleteMapping("/{cityId}")
-	@ApiOperation(value = "Delete a city", notes = "REST service to delete a searched city")
+	@DeleteMapping("/{idAuthor}")
+	@ApiOperation(value = "Delete an author", notes = "REST service to delete a searched author")
 	public ResponseEntity<AuthorDto> deleteAuthor(@PathVariable Integer idAuthor) {
 		return new ResponseEntity<AuthorDto>(authorService.deleteAuthor(idAuthor), HttpStatus.OK);
 	}
