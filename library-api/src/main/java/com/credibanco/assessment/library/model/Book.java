@@ -15,7 +15,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "EDITORIAL", schema = "SYSTEM")
+@Table(name = "BOOK", schema = "SYSTEM")
 @Getter
 @Setter
 public class Book implements Serializable {

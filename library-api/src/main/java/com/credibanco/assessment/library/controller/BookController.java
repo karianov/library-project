@@ -43,9 +43,9 @@ public class BookController {
 	}
 
 	@PostMapping
-	@ApiOperation(value = "Create one book", notes = "REST service to insert new books")
-	public ResponseEntity<BookDto> createBook(@Valid @RequestBody BookDto newBook) {
-		return new ResponseEntity<BookDto>(bookService.saveBook(newBook), HttpStatus.CREATED);
+	@ApiOperation(value = "Search for books from text", notes = "REST service to search books with the text")
+	public ResponseEntity<List<BookDto>> searchBooks(@RequestBody String textCriteria) {
+		return new ResponseEntity<List<BookDto>>(bookService.findBooks(textCriteria), HttpStatus.CREATED);
 	}
 
 	@PutMapping("/{idBook}")

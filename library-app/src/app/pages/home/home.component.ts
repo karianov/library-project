@@ -33,7 +33,7 @@ export class HomeComponent {
       this.booksSearched = [];
       this.bookService.queryBook(this.searchField.value).subscribe(
         (result) => {
-          this.loadingQuery = true;
+          this.loadingQuery = false;
           if (result.length > 0) {
             this.booksSearched = result;
           } else {

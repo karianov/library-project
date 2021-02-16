@@ -9,6 +9,8 @@ public interface BookService {
 	public BookDto findBookById(Integer idBook);
 
 	public List<BookDto> findAllBooks();
+	
+	public List<BookDto> findBooks(String criteria);
 
 	public BookDto saveBook(BookDto newBook);
 

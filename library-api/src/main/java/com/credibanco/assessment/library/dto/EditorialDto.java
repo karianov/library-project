@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import lombok.Getter;
@@ -32,7 +33,7 @@ public class EditorialDto implements Serializable {
 	@Size(max = 45, message = "El correo electrónico de la editorial no puede exceder los 45 caracteres")
 	private String email;
 
-	@NotBlank(message = "El máximo número de libros de la editorial no puede ser vacía")
+	@NotNull(message = "El máximo número de libros de la editorial no puede ser vacía")
 	@Min(value = -1, message = "El máximo número de libros de la editorial no puede ser un número negativo")
 	private Integer maxBooksReg;
 	

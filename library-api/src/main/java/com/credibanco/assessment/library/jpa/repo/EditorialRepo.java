@@ -7,5 +7,5 @@ import com.credibanco.assessment.library.model.Editorial;
 public interface EditorialRepo extends JpaRepository<Editorial, Integer> {
 
 	public Editorial findByIdEditorial(Integer idEditorial);
-	
+
 }
