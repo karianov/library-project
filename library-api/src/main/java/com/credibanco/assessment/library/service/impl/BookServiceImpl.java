@@ -12,7 +12,6 @@ import com.credibanco.assessment.library.dto.BookDto;
 import com.credibanco.assessment.library.dto.EditorialDto;
 import com.credibanco.assessment.library.jpa.repo.BookRepo;
 import com.credibanco.assessment.library.model.Book;
-import com.credibanco.assessment.library.service.AuthorService;
 import com.credibanco.assessment.library.service.BookService;
 import com.credibanco.assessment.library.service.EditorialService;
 import com.credibanco.assessment.library.service.MapperService;
@@ -65,9 +64,12 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public BookDto saveBook(BookDto newBook) {
 		try {
-			Integer numberOfBooks = bookRepo.findAll().size();
+			Integer numberOfBooks = bookRepo.findNumberOfBooksFromEditorial(newBook.getEditorial().getIdEditorial());
 			EditorialDto editorialDestination = editorialService
 					.findEditorialById(newBook.getEditorial().getIdEditorial());
+			System.out.println();
+			System.out.println(numberOfBooks);
+			System.out.println();
 			if (numberOfBooks < editorialDestination.getMaxBooksReg()) {
 				Book bookToCreate = mapperService.map(newBook, Book.class);
 				bookToCreate.setIdBook(null);

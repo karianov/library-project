@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://dozer.sourceforge.net
       http://dozer.sourceforge.net/schema/beanmapping.xsd">
 	<!-- Mapping entries -->
-	<mapping date-format="MM/dd/yyyy" map-null="true" map-empty-string="true" wildcard="true" type="one-way" >
+	<mapping date-format="dd/MM/yyyy" map-null="true" map-empty-string="true" wildcard="true" type="bi-directional">
         <class-a>com.credibanco.assessment.library.dto.AuthorDto</class-a>
         <class-b>com.credibanco.assessment.library.model.Author</class-b>
         <field>
